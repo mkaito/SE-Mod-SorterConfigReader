@@ -76,7 +76,7 @@ namespace SorterConfigReader
             _sorter.SetFilter(mode, filters);
         }
 
-        private List<MyInventoryItemFilter> ParseFilters(string filterString)
+        private static List<MyInventoryItemFilter> ParseFilters(string filterString)
         {
             var filters = new List<MyInventoryItemFilter>();
             var lines = filterString.Trim().Split('\n');
@@ -91,7 +91,6 @@ namespace SorterConfigReader
                 }
                 catch (Exception)
                 {
-                    SimpleLog.Error(this, $"Could not parse filter line: {trim}");
                     // Ignore
                 }
             }

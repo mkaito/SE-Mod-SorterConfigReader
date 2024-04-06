@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-pandoc -f org -t ./vendor/2bbcode/bbcode_steam.lua <readme.org >|description.bb
+pandoc -f markdown -t ./vendor/2bbcode/bbcode_steam.lua <readme.md >|description.bb
 
 description_size=$(wc -c < description.bb)
 if [[ $description_size -gt 7999 ]]; then
@@ -10,14 +10,7 @@ if [[ $description_size -gt 7999 ]]; then
   exit 1
 fi
 
-MOD_ID_FULL=2552601155
-MOD_ID_LITE=2758563789
-
-if [[ ${1:-full} = "full" ]]; then
-    MOD_ID="$MOD_ID_FULL"
-else
-    MOD_ID="$MOD_ID_LITE"
-fi
+MOD_ID=3214510627
 
 cat << EOF >| mod.vdf
 "workshopitem"
@@ -25,6 +18,7 @@ cat << EOF >| mod.vdf
   "appid"             "244850"
   "publishedfileid"   "$MOD_ID"
   "contentfolder"     "$PWD/Upload"
+  "previewfile"       "$PWD/Upload/preview.png"
   "description"       "$(cat $PWD/description.bb)"
 }
 EOF
