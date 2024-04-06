@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SpaceEngineers\\Content\\Data",
+			"name": "Game Data"
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"Jetpack",
+			"Mult"
+		]
+	}
+}

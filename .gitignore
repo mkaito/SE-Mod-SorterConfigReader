@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+/Upload/
+/mod.vdf
+/description.bb
+/.envrc
+/.history/
+/Scripts/SorterConfigReader/packages/
