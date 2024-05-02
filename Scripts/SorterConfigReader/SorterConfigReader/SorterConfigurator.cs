@@ -63,7 +63,7 @@ namespace SorterConfigReader
             MyIniParseResult iniParseResult;
             if (!_ini.TryParse(_customData, out iniParseResult))
             {
-                throw new Exception(iniParseResult.ToString());
+                return;
             }
 
             var modeString = _ini.Get(IniTag, "mode").ToString();
