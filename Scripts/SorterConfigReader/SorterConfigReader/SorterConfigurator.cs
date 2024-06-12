@@ -66,8 +66,8 @@ namespace SorterConfigReader
                 return;
             }
 
-            var modeString = _ini.Get(IniTag, "mode").ToString();
-            var filterString = _ini.Get(IniTag, "filters").ToString();
+            var modeString = _ini.Get(IniTag, "mode").ToString().Trim();
+            var filterString = _ini.Get(IniTag, "filters").ToString().Trim();
 
             var mode = modeString == "whitelist" ? MyConveyorSorterMode.Whitelist : MyConveyorSorterMode.Blacklist;
 
@@ -79,7 +79,7 @@ namespace SorterConfigReader
         private static List<MyInventoryItemFilter> ParseFilters(string filterString)
         {
             var filters = new List<MyInventoryItemFilter>();
-            var lines = filterString.Trim().Split('\n');
+            var lines = filterString.Split('\n');
 
             foreach (var line in lines)
             {
